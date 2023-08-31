@@ -11,24 +11,20 @@ class Instructor extends Model
 
     protected $fillable = ['title', 'user_id', 'city_id'];
 
-    public function cities()
+    public function city()
     {
         return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function subjecs()
-    {
-        return $this->belongsToMany(Subject::class,'instructor_subjects','subject_id', 'instructor_id');
-    }
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class,'instructor_courses','course_id', 'instructor_id');
+        return $this->hasMany(Course::class, 'instructor_id');
     }
 
     public function reservations()

@@ -26,7 +26,8 @@ class UserController extends Controller
             'last_name'=> $request->last_name,
             'email'=> $request->email,
             'password'=> Hash::make($request->password),
-            'phone'=> $request->phone
+            'phone'=> $request->phone,
+            'status'=> $request->status
         ]);
     }
 
@@ -48,7 +49,8 @@ class UserController extends Controller
             'last_name'=> $request->last_name,
             'email'=> $request->email,
             'password'=> Hash::make($request->password),
-            'phone'=> $request->phone
+            'phone'=> $request->phone,
+            'status'=> $request->status
         ]);
     }
 

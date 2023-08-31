@@ -22,7 +22,8 @@ class CourseController extends Controller
     {
         return Course::create([
             'name'=> $request->name,
-            'description'=> $request->description
+            'description'=> $request->description,
+            'instructor_id'=> $request->instructor_id
         ]);
     }
 
@@ -41,7 +42,8 @@ class CourseController extends Controller
     {
         return $course->update([
             'name'=> $request->name,
-            'description'=> $request->description
+            'description'=> $request->description,
+            'instructor_id'=> $request->instructor_id
         ]);
 
     }

@@ -9,10 +9,16 @@ class Course extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'instructor_id'];
+
 
     public function instructors()
     {
-        return $this->belongsToMany(Instructor::class,'instructor_courses','instructor_id', 'course_id');
+        return $this->belongsTo(Instructor::class, 'instructor_id');
+    }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class,'course_id');
     }
 }
